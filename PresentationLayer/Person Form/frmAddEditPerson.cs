@@ -20,9 +20,9 @@ namespace Project_19_DVDL__2nd_
         enum enMode { Addnew = 0, Edit = 1 };
         private enMode Mode;
         string selectedFilePath = "";
-        clsPerson Person;
+        private clsPerson Person;
 
-        DataTable dt;
+        private DataTable dt;
 
         public delegate void DataBackEventHandler(object sender, int PersonID);
         public event DataBackEventHandler DataBack;
@@ -34,11 +34,13 @@ namespace Project_19_DVDL__2nd_
             {
                 Mode = enMode.Addnew;
                 Person = new clsPerson();
+                this.Text = "Add Person";
             }
             else
             {
                 Mode = enMode.Edit;
                 Person = clsPerson.FindPersonByID(PersonID);
+                this.Text = "Update Person";
             }
             Check();
         }

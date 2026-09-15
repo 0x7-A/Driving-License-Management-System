@@ -192,7 +192,7 @@
             Controls.Add(gbFilter);
             Controls.Add(label1);
             Name = "frmInternationalLicenseApplication";
-            Text = "frmInternationalLicenseApplication";
+            Text = "International License Application";
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbFibdLicenseID).EndInit();

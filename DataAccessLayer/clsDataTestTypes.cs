@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,9 +35,9 @@ namespace Project_DataAccessLayer
 
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                 Console.WriteLine("Error: " + ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error); 
             }
             finally
             {
@@ -76,10 +77,7 @@ namespace Project_DataAccessLayer
 
 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            catch (Exception e) { EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error); }
             finally
             { 
               
@@ -111,11 +109,15 @@ namespace Project_DataAccessLayer
                 return cmd.ExecuteNonQuery() > 0;
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message);
-                return false;
+            catch (Exception e)
+            { 
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally { connection.Close(); }
-               
+
+
+            return false;
         }
+
     }
 }

@@ -105,7 +105,7 @@
             Controls.Add(pbTitle);
             Controls.Add(label1);
             Name = "frmLicenseHistory";
-            Text = "frmLicenseHistory";
+            Text = "License History";
             Load += frmLicenseHistory_Load;
             ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

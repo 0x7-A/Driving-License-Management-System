@@ -112,7 +112,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1197, 283);
+            dataGridView1.Size = new Size(1221, 283);
             dataGridView1.TabIndex = 10;
             // 
             // cmsBaseManagement
@@ -120,59 +120,60 @@
             cmsBaseManagement.ImageScalingSize = new Size(20, 20);
             cmsBaseManagement.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, addNewPersonToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, toolStripMenuItem2, sendEmailToolStripMenuItem, phoneCallToolStripMenuItem });
             cmsBaseManagement.Name = "contextMenuStrip1";
-            cmsBaseManagement.Size = new Size(215, 200);
+            cmsBaseManagement.Size = new Size(189, 172);
             cmsBaseManagement.Opening += cmsBaseManagement_Opening;
             // 
             // showDetailsToolStripMenuItem
             // 
             showDetailsToolStripMenuItem.Image = Properties.Resources.PersonDetails_321;
             showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            showDetailsToolStripMenuItem.Size = new Size(214, 26);
+            showDetailsToolStripMenuItem.Size = new Size(188, 26);
             showDetailsToolStripMenuItem.Text = "Show Details";
+            showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(211, 6);
+            toolStripMenuItem1.Size = new Size(185, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             addNewPersonToolStripMenuItem.Image = Properties.Resources.Add_Person_401;
             addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            addNewPersonToolStripMenuItem.Size = new Size(214, 26);
+            addNewPersonToolStripMenuItem.Size = new Size(188, 26);
             addNewPersonToolStripMenuItem.Text = "Add new Person";
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Image = Properties.Resources.edit_32;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(214, 26);
+            editToolStripMenuItem.Size = new Size(188, 26);
             editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Image = Properties.Resources.Delete_32;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(214, 26);
+            deleteToolStripMenuItem.Size = new Size(188, 26);
             deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(211, 6);
+            toolStripMenuItem2.Size = new Size(185, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             sendEmailToolStripMenuItem.Image = Properties.Resources.send_email_32;
             sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            sendEmailToolStripMenuItem.Size = new Size(214, 26);
+            sendEmailToolStripMenuItem.Size = new Size(188, 26);
             sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // phoneCallToolStripMenuItem
             // 
             phoneCallToolStripMenuItem.Image = Properties.Resources.call_32;
             phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            phoneCallToolStripMenuItem.Size = new Size(214, 26);
+            phoneCallToolStripMenuItem.Size = new Size(188, 26);
             phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // lblTitle
@@ -180,7 +181,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(563, 205);
+            lblTitle.Location = new Point(664, 200);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(71, 38);
             lblTitle.TabIndex = 9;
@@ -188,7 +189,7 @@
             // 
             // pbTitle
             // 
-            pbTitle.Location = new Point(503, 48);
+            pbTitle.Location = new Point(589, 50);
             pbTitle.Name = "pbTitle";
             pbTitle.Size = new Size(202, 134);
             pbTitle.TabIndex = 8;
@@ -252,14 +253,14 @@
         public PictureBox pbTitle;
         public Label label1;
         public Label lblrecord;
-        private ToolStripMenuItem showDetailsToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem addNewPersonToolStripMenuItem;
-        private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem deleteToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
-        private ToolStripMenuItem sendEmailToolStripMenuItem;
-        private ToolStripMenuItem phoneCallToolStripMenuItem;
-        protected ContextMenuStrip cmsBaseManagement;
+        public ContextMenuStrip cmsBaseManagement;
+        public ToolStripMenuItem showDetailsToolStripMenuItem;
+        public ToolStripMenuItem addNewPersonToolStripMenuItem;
+        public ToolStripMenuItem editToolStripMenuItem;
+        public ToolStripMenuItem deleteToolStripMenuItem;
+        public ToolStripMenuItem sendEmailToolStripMenuItem;
+        public ToolStripMenuItem phoneCallToolStripMenuItem;
     }
 }

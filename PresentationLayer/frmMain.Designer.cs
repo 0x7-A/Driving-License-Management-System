@@ -84,7 +84,7 @@
             drivingLicensesServicesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newDrivingLicenseToolStripMenuItem, renewDrivingLicenseToolStripMenuItem, toolStripMenuItem2, replacementForLostOrDamageToolStripMenuItem, toolStripMenuItem1, releaseDetainedDrivingLicenseToolStripMenuItem, retakeTestToolStripMenuItem });
             drivingLicensesServicesToolStripMenuItem.Image = Properties.Resources.LocalDriving_License;
             drivingLicensesServicesToolStripMenuItem.Name = "drivingLicensesServicesToolStripMenuItem";
-            drivingLicensesServicesToolStripMenuItem.Size = new Size(274, 38);
+            drivingLicensesServicesToolStripMenuItem.Size = new Size(262, 26);
             drivingLicensesServicesToolStripMenuItem.Text = "Driving Licenses Services";
             // 
             // newDrivingLicenseToolStripMenuItem
@@ -92,7 +92,7 @@
             newDrivingLicenseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { localLicenseToolStripMenuItem, internationalLicenseToolStripMenuItem });
             newDrivingLicenseToolStripMenuItem.Image = Properties.Resources.New_Driving_License_32;
             newDrivingLicenseToolStripMenuItem.Name = "newDrivingLicenseToolStripMenuItem";
-            newDrivingLicenseToolStripMenuItem.Size = new Size(324, 38);
+            newDrivingLicenseToolStripMenuItem.Size = new Size(312, 26);
             newDrivingLicenseToolStripMenuItem.Text = "New Driving License";
             // 
             // localLicenseToolStripMenuItem
@@ -115,33 +115,33 @@
             // 
             renewDrivingLicenseToolStripMenuItem.Image = Properties.Resources.Renew_Driving_License_32;
             renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
-            renewDrivingLicenseToolStripMenuItem.Size = new Size(324, 38);
+            renewDrivingLicenseToolStripMenuItem.Size = new Size(312, 26);
             renewDrivingLicenseToolStripMenuItem.Text = "Renew Driving License";
             renewDrivingLicenseToolStripMenuItem.Click += renewDrivingLicenseToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(321, 6);
+            toolStripMenuItem2.Size = new Size(309, 6);
             // 
             // replacementForLostOrDamageToolStripMenuItem
             // 
             replacementForLostOrDamageToolStripMenuItem.Image = Properties.Resources.Damaged_Driving_License_32;
             replacementForLostOrDamageToolStripMenuItem.Name = "replacementForLostOrDamageToolStripMenuItem";
-            replacementForLostOrDamageToolStripMenuItem.Size = new Size(324, 38);
+            replacementForLostOrDamageToolStripMenuItem.Size = new Size(312, 26);
             replacementForLostOrDamageToolStripMenuItem.Text = "Replacement for Lost or Damage";
             replacementForLostOrDamageToolStripMenuItem.Click += replacementForLostOrDamageToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(321, 6);
+            toolStripMenuItem1.Size = new Size(309, 6);
             // 
             // releaseDetainedDrivingLicenseToolStripMenuItem
             // 
             releaseDetainedDrivingLicenseToolStripMenuItem.Image = Properties.Resources.Detained_Driving_License_32;
             releaseDetainedDrivingLicenseToolStripMenuItem.Name = "releaseDetainedDrivingLicenseToolStripMenuItem";
-            releaseDetainedDrivingLicenseToolStripMenuItem.Size = new Size(324, 38);
+            releaseDetainedDrivingLicenseToolStripMenuItem.Size = new Size(312, 26);
             releaseDetainedDrivingLicenseToolStripMenuItem.Text = "Release Detained Driving License";
             releaseDetainedDrivingLicenseToolStripMenuItem.Click += releaseDetainedDrivingLicenseToolStripMenuItem_Click;
             // 
@@ -149,7 +149,7 @@
             // 
             retakeTestToolStripMenuItem.Image = Properties.Resources.Retake_Test_32;
             retakeTestToolStripMenuItem.Name = "retakeTestToolStripMenuItem";
-            retakeTestToolStripMenuItem.Size = new Size(324, 38);
+            retakeTestToolStripMenuItem.Size = new Size(312, 26);
             retakeTestToolStripMenuItem.Text = "Retake Test";
             // 
             // manageApplicationsToolStripMenuItem
@@ -157,7 +157,7 @@
             manageApplicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { localDrivingLicenseApplicaionsToolStripMenuItem, internationalLicenseApplicationsToolStripMenuItem });
             manageApplicationsToolStripMenuItem.Image = Properties.Resources.Manage_Applications_32;
             manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
-            manageApplicationsToolStripMenuItem.Size = new Size(274, 38);
+            manageApplicationsToolStripMenuItem.Size = new Size(262, 26);
             manageApplicationsToolStripMenuItem.Text = "Manage Applications";
             // 
             // localDrivingLicenseApplicaionsToolStripMenuItem
@@ -181,14 +181,14 @@
             detainLicensesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manaToolStripMenuItem, detainLicenseToolStripMenuItem, releaseDetainedLicensesToolStripMenuItem });
             detainLicensesToolStripMenuItem.Image = Properties.Resources.Detain_32;
             detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
-            detainLicensesToolStripMenuItem.Size = new Size(274, 38);
+            detainLicensesToolStripMenuItem.Size = new Size(262, 26);
             detainLicensesToolStripMenuItem.Text = "Detain Licenses";
             // 
             // manaToolStripMenuItem
             // 
             manaToolStripMenuItem.Image = Properties.Resources.Detain_321;
             manaToolStripMenuItem.Name = "manaToolStripMenuItem";
-            manaToolStripMenuItem.Size = new Size(282, 38);
+            manaToolStripMenuItem.Size = new Size(270, 26);
             manaToolStripMenuItem.Text = "Manage Detained Licenses";
             manaToolStripMenuItem.Click += manaToolStripMenuItem_Click;
             // 
@@ -196,7 +196,7 @@
             // 
             detainLicenseToolStripMenuItem.Image = Properties.Resources.Detain_32;
             detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
-            detainLicenseToolStripMenuItem.Size = new Size(282, 38);
+            detainLicenseToolStripMenuItem.Size = new Size(270, 26);
             detainLicenseToolStripMenuItem.Text = "Detain License";
             detainLicenseToolStripMenuItem.Click += detainLicenseToolStripMenuItem_Click;
             // 
@@ -204,7 +204,7 @@
             // 
             releaseDetainedLicensesToolStripMenuItem.Image = Properties.Resources.Release_Detained_License_64;
             releaseDetainedLicensesToolStripMenuItem.Name = "releaseDetainedLicensesToolStripMenuItem";
-            releaseDetainedLicensesToolStripMenuItem.Size = new Size(282, 38);
+            releaseDetainedLicensesToolStripMenuItem.Size = new Size(270, 26);
             releaseDetainedLicensesToolStripMenuItem.Text = "Release  Detained Licenses";
             releaseDetainedLicensesToolStripMenuItem.Click += releaseDetainedLicensesToolStripMenuItem_Click;
             // 
@@ -212,7 +212,7 @@
             // 
             manageApplicationTypeToolStripMenuItem.Image = Properties.Resources.Application_Types_64;
             manageApplicationTypeToolStripMenuItem.Name = "manageApplicationTypeToolStripMenuItem";
-            manageApplicationTypeToolStripMenuItem.Size = new Size(274, 38);
+            manageApplicationTypeToolStripMenuItem.Size = new Size(262, 26);
             manageApplicationTypeToolStripMenuItem.Text = "Manage Application Type";
             manageApplicationTypeToolStripMenuItem.Click += manageApplicationTypeToolStripMenuItem_Click;
             // 
@@ -220,7 +220,7 @@
             // 
             mangeTestTypesToolStripMenuItem.Image = Properties.Resources.Test_Type_64;
             mangeTestTypesToolStripMenuItem.Name = "mangeTestTypesToolStripMenuItem";
-            mangeTestTypesToolStripMenuItem.Size = new Size(274, 38);
+            mangeTestTypesToolStripMenuItem.Size = new Size(262, 26);
             mangeTestTypesToolStripMenuItem.Text = "Mange Test Types";
             mangeTestTypesToolStripMenuItem.Click += mangeTestTypesToolStripMenuItem_Click;
             // 
@@ -305,6 +305,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main ";
             WindowState = FormWindowState.Maximized;
+            Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

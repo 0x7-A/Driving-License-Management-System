@@ -194,7 +194,7 @@
             Controls.Add(lblTitle);
             Controls.Add(pbTitle);
             Name = "frmTest";
-            Text = "frmTest";
+            Text = "Test";
             Load += frmTest_Load;
             ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

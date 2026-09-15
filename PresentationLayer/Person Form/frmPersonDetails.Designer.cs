@@ -436,7 +436,7 @@
             Controls.Add(panel1);
             Controls.Add(lblTitle);
             Name = "frmPersonDetails";
-            Text = "frmPersonDetails";
+            Text = "Person Details";
             Load += frmPersonDetails_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

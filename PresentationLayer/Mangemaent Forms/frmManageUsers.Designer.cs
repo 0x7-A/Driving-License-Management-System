@@ -81,14 +81,14 @@
             cmManageUser.ImageScalingSize = new Size(20, 20);
             cmManageUser.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, addNewUserToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, changePasswordToolStripMenuItem, toolStripMenuItem2, sendEmailToolStripMenuItem, phoneCallToolStripMenuItem });
             cmManageUser.Name = "contextMenuStrip1";
-            cmManageUser.Size = new Size(215, 226);
+            cmManageUser.Size = new Size(198, 198);
             cmManageUser.Opening += cmManageUser_Opening;
             // 
             // showDetailsToolStripMenuItem
             // 
             showDetailsToolStripMenuItem.Image = Properties.Resources.PersonDetails_32;
             showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            showDetailsToolStripMenuItem.Size = new Size(214, 26);
+            showDetailsToolStripMenuItem.Size = new Size(197, 26);
             showDetailsToolStripMenuItem.Text = "Show Details";
             showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
             // 
@@ -169,7 +169,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Close_32;
-            pictureBox1.Location = new Point(1102, 624);
+            pictureBox1.Location = new Point(822, 612);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 32);
             pictureBox1.TabIndex = 27;
@@ -196,7 +196,7 @@
             // btnAdd
             // 
             btnAdd.Image = Properties.Resources.Add_Person_40;
-            btnAdd.Location = new Point(1175, 224);
+            btnAdd.Location = new Point(900, 224);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(63, 51);
             btnAdd.TabIndex = 24;
@@ -205,9 +205,9 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(1091, 608);
+            btnClose.Location = new Point(811, 596);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(147, 63);
+            btnClose.Size = new Size(152, 62);
             btnClose.TabIndex = 23;
             btnClose.Text = "close";
             btnClose.UseVisualStyleBackColor = true;
@@ -222,11 +222,11 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.ContextMenuStrip = cmManageUser;
-            dataGridView1.Location = new Point(51, 290);
+            dataGridView1.Location = new Point(64, 291);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1197, 283);
+            dataGridView1.Size = new Size(913, 283);
             dataGridView1.TabIndex = 22;
             // 
             // lblTitle
@@ -234,7 +234,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(522, 202);
+            lblTitle.Location = new Point(459, 166);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(198, 38);
             lblTitle.TabIndex = 21;
@@ -243,7 +243,7 @@
             // pbTitle
             // 
             pbTitle.Image = Properties.Resources.Users_2_4001;
-            pbTitle.Location = new Point(518, 48);
+            pbTitle.Location = new Point(455, 12);
             pbTitle.Name = "pbTitle";
             pbTitle.Size = new Size(202, 134);
             pbTitle.SizeMode = PictureBoxSizeMode.Zoom;
@@ -254,7 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1321, 670);
+            ClientSize = new Size(1039, 670);
             Controls.Add(lblrecord);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -268,7 +268,7 @@
             Controls.Add(cbIsActive);
             Controls.Add(txtFiliter);
             Name = "frmManageUsers";
-            Text = "frmManageUsers";
+            Text = "Manage Users";
             Load += frmManageUsers_Load;
             Click += addNewUserToolStripMenuItem_Click;
             cmManageUser.ResumeLayout(false);

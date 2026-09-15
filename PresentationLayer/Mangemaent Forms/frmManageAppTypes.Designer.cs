@@ -35,12 +35,10 @@
             lblTitle = new Label();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
-            pictureBox2 = new PictureBox();
             contextMenuStripEdit = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             contextMenuStripEdit.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,7 +64,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(854, 536);
+            button1.Location = new Point(898, 547);
             button1.Name = "button1";
             button1.Size = new Size(123, 45);
             button1.TabIndex = 9;
@@ -102,22 +100,14 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-3, 192);
+            dataGridView1.GridColor = SystemColors.ControlDark;
+            dataGridView1.Location = new Point(23, 199);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(998, 331);
             dataGridView1.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.Close_32;
-            pictureBox2.Location = new Point(863, 550);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(22, 20);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
             // 
             // contextMenuStripEdit
             // 
@@ -139,7 +129,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1050, 618);
             ContextMenuStrip = contextMenuStripEdit;
-            Controls.Add(pictureBox2);
             Controls.Add(lblTotalRecord);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -147,11 +136,10 @@
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Name = "frmManageAppTypes";
-            Text = "frmManageAppTypes";
+            Text = "Manage Application Types";
             Load += frmManageAppTypes_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             contextMenuStripEdit.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -165,7 +153,6 @@
         private Label lblTitle;
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
-        private PictureBox pictureBox2;
         private ContextMenuStrip contextMenuStripEdit;
         private ToolStripMenuItem editToolStripMenuItem;
     }

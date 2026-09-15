@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,11 +40,13 @@ namespace Project_DataAccessLayer
                 return dt;
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return dt;
 
-            }finally
+            }
+            finally
             {
                 connection.Close();
             }
@@ -99,9 +102,9 @@ namespace Project_DataAccessLayer
                     TestAppointmentID = insertedID;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -132,9 +135,9 @@ namespace Project_DataAccessLayer
 
                 return result > 0;
             }
-            catch(Exception Ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -166,9 +169,9 @@ namespace Project_DataAccessLayer
                 return result > 0;
 
             }
-            catch (Exception Ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -199,9 +202,9 @@ namespace Project_DataAccessLayer
                 return (result != null); 
 
             }
-            catch (Exception Ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -240,9 +243,9 @@ namespace Project_DataAccessLayer
                     TotalTrials = count;
                 }
             }
-            catch (Exception EX)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally { connection.Close(); }
 
@@ -278,7 +281,10 @@ namespace Project_DataAccessLayer
                 }
                 reader.Close();
             }
-            catch (Exception ex) { isFound = false; }
+            catch (Exception e)
+            {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+            }
             finally { connection.Close(); }
             return isFound;
         }

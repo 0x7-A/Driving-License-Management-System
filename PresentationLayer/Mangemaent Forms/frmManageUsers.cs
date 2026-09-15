@@ -31,7 +31,24 @@ namespace Project_19_DVDL__2nd_
         private void _Refresh()
         {
             _dt = clsUsers.GetAllUsers();
+
             dataGridView1.DataSource = _dt;
+            dataGridView1.Columns[0].HeaderText = "User ID";
+            dataGridView1.Columns[0].Width = 80;
+
+            dataGridView1.Columns[1].HeaderText = "Person ID";
+            dataGridView1.Columns[1].Width = 90;
+
+
+            dataGridView1.Columns[2].HeaderText = "Created By";
+            dataGridView1.Columns[2].Width = 200;
+
+            dataGridView1.Columns[3].HeaderText = "Created Date";
+            dataGridView1.Columns[3].Width = 160;
+
+            dataGridView1.Columns[3].HeaderText = "Is Active";
+            dataGridView1.Columns[3].Width = 80;
+
             lblrecord.Text = dataGridView1.RowCount.ToString();
             GetComboBoxCollection();
             GetComboBoxIsActive();
@@ -40,6 +57,10 @@ namespace Project_19_DVDL__2nd_
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
+
+
             if (comboBox1.Text == "IsActive")
             {
                 txtFiliter.Visible = false;
@@ -47,7 +68,15 @@ namespace Project_19_DVDL__2nd_
                 cbIsActive.SelectedIndex = 0;
                 return;
             }
+            else if(comboBox1.Text == "None")
+            {
+                txtFiliter.Visible = false;
+                cbIsActive.Visible = false;
+                return;
 
+            }
+
+            cbIsActive.Visible = false;
             txtFiliter.Visible = true;
             txtFiliter.Text = "";
             txtFiliter.Focus();
@@ -58,12 +87,15 @@ namespace Project_19_DVDL__2nd_
             comboBox1.Items.Clear();
 
 
+            comboBox1.Items.Add("None");
+
             foreach (DataColumn col in _dt.Columns)
             {
                 comboBox1.Items.Add((string)col.ColumnName);
             }
 
             comboBox1.SelectedIndex = 0;
+            txtFiliter.Visible = false;
         }
 
 
@@ -88,6 +120,8 @@ namespace Project_19_DVDL__2nd_
                 _dt.DefaultView.RowFilter = "";
                 return;
             }
+
+            
 
             if (FilterColumn == "UserID" || FilterColumn == "PersonID")
             {

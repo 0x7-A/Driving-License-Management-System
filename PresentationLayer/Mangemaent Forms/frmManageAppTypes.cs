@@ -28,6 +28,18 @@ namespace Project_19_DVDL__2nd_
         {
             dataGridView1.DataSource = clsManageAppTypes.GetAllTheAppTypes();
             lblTotalRecord.Text = dataGridView1.Rows.Count.ToString();
+
+           
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[0].Width = 110;
+
+            dataGridView1.Columns[2].HeaderText = "Fees";
+            dataGridView1.Columns[2].Width = 100;
+
+         
+            dataGridView1.Columns[1].HeaderText = "Title";
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

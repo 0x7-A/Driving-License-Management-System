@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,12 +98,12 @@ namespace Project_DataAccessLayer
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 connection.Close();
@@ -157,11 +158,12 @@ namespace Project_DataAccessLayer
 
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 isFound = false;
-
             }
+
             finally
             {
                 connection.Close();
@@ -194,10 +196,11 @@ namespace Project_DataAccessLayer
                     isDetained = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally { connection.Close(); }
 
             return isDetained;
@@ -258,11 +261,12 @@ namespace Project_DataAccessLayer
                     LicenseID = insertedID;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-               
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 LicenseID = -1;
             }
+
             finally
             {
                 connection.Close();
@@ -290,10 +294,12 @@ namespace Project_DataAccessLayer
 
                 return rowEffected > 0;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 conn.Close();

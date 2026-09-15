@@ -1,4 +1,6 @@
-﻿using Project19_businessLayer;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Project19_businessLayer;
+using Project19_BussnessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +42,7 @@ namespace Project_19_DVDL__2nd_
         {
             _ValidateEmpty(sender, e, "Current Password");
 
-
+        
             if (!ucUsers1.VerifyCurrentPassword(txtCurrentPS.Text))
             {
                 e.Cancel = true;
@@ -48,7 +50,6 @@ namespace Project_19_DVDL__2nd_
             }
             else
             {
-
                 e.Cancel = false;
                 errorProvider1.SetError(txtCurrentPS, "");
             }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,10 +42,11 @@ WHERE Applications.ApplicantPersonID = @PersonID;";
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-             
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -81,10 +83,11 @@ FROM InternationalLicenses";
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -136,10 +139,11 @@ SELECT SCOPE_IDENTITY();";
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -174,10 +178,11 @@ SELECT SCOPE_IDENTITY();";
                 
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally { connection.Close(); }
 
             return false;
@@ -221,11 +226,12 @@ SELECT SCOPE_IDENTITY();";
                 }
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 isFound = false;
-              
             }
+
             finally
             {
                 connection.Close();

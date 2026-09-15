@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,9 +39,9 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -79,9 +80,9 @@ AND TestResult = 1;";
            
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -115,9 +116,9 @@ ORDER BY TestID DESC;";
                 
                 return (result != null);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {

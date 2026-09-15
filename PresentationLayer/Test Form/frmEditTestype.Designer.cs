@@ -197,7 +197,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmEditTestype";
-            Text = "frmEditTestype";
+            Text = "Edit Test Types";
             Load += frmEditTestype_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

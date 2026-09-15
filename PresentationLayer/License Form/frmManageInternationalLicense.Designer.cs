@@ -140,8 +140,7 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showPersonDetailToolStripMenuItem, toolStripMenuItem1, showLicenseDetailToolStripMenuItem, toolStripMenuItem2, showPersonLicenseHistoryToolStripMenuItem1 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(265, 122);
-            
+            contextMenuStrip1.Size = new Size(265, 94);
             // 
             // showPersonDetailToolStripMenuItem
             // 
@@ -233,7 +232,7 @@
             Controls.Add(pbTitle);
             Controls.Add(txtFiliter);
             Name = "frmManageInternationalLicense";
-            Text = "frmManageInternationalLicense";
+            Text = "Manage International License";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

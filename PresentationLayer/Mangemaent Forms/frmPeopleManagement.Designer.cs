@@ -77,26 +77,26 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showDetailsToolStripMenuItem, toolStripMenuItem1, addNewPersonToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, toolStripMenuItem2, sendEmailToolStripMenuItem, phoneCallToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(215, 200);
+            contextMenuStrip1.Size = new Size(189, 172);
             // 
             // showDetailsToolStripMenuItem
             // 
             showDetailsToolStripMenuItem.Image = Properties.Resources.PersonDetails_321;
             showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            showDetailsToolStripMenuItem.Size = new Size(214, 26);
+            showDetailsToolStripMenuItem.Size = new Size(188, 26);
             showDetailsToolStripMenuItem.Text = "Show Details";
             showDetailsToolStripMenuItem.Click += showDetailsToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(211, 6);
+            toolStripMenuItem1.Size = new Size(185, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             addNewPersonToolStripMenuItem.Image = Properties.Resources.Add_Person_401;
             addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            addNewPersonToolStripMenuItem.Size = new Size(214, 26);
+            addNewPersonToolStripMenuItem.Size = new Size(188, 26);
             addNewPersonToolStripMenuItem.Text = "Add new Person";
             addNewPersonToolStripMenuItem.Click += addNewPersonToolStripMenuItem_Click;
             // 
@@ -104,7 +104,7 @@
             // 
             editToolStripMenuItem.Image = Properties.Resources.edit_32;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(214, 26);
+            editToolStripMenuItem.Size = new Size(188, 26);
             editToolStripMenuItem.Text = "Edit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
@@ -112,27 +112,27 @@
             // 
             deleteToolStripMenuItem.Image = Properties.Resources.Delete_32;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(214, 26);
+            deleteToolStripMenuItem.Size = new Size(188, 26);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(211, 6);
+            toolStripMenuItem2.Size = new Size(185, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             sendEmailToolStripMenuItem.Image = Properties.Resources.send_email_32;
             sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            sendEmailToolStripMenuItem.Size = new Size(214, 26);
+            sendEmailToolStripMenuItem.Size = new Size(188, 26);
             sendEmailToolStripMenuItem.Text = "Send Email";
             // 
             // phoneCallToolStripMenuItem
             // 
             phoneCallToolStripMenuItem.Image = Properties.Resources.call_32;
             phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            phoneCallToolStripMenuItem.Size = new Size(214, 26);
+            phoneCallToolStripMenuItem.Size = new Size(188, 26);
             phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // frmPeopleManagement
@@ -143,7 +143,7 @@
             ContextMenuStrip = contextMenuStrip1;
             Controls.Add(textBox1);
             Name = "frmPeopleManagement";
-            Text = "frmPeopleManagement";
+            Text = "People Management";
             Load += frmPeopleManagement_Load;
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(lblrecord, 0);

@@ -140,7 +140,7 @@
             Controls.Add(ucdlApplicationInfo1);
             Controls.Add(ucApplicationBasicInfo1);
             Name = "frmIssueDrivingLicenseForTheFirstTime";
-            Text = "frmIssueDrivingLicenseForTheFirstTime";
+            Text = "Issue Driving License For The First Time";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbDetainRelease).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,11 +67,12 @@ namespace  Project_DataAccessLayer
 
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                isFound = false;
-               
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+                isFound  = false;
             }
+
             finally
             {
                 connection.Close();
@@ -112,10 +114,11 @@ namespace  Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -151,11 +154,12 @@ namespace  Project_DataAccessLayer
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-              
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 connection.Close();
@@ -200,10 +204,11 @@ namespace  Project_DataAccessLayer
 
                 reader.Close();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-               
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();

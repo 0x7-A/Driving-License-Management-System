@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,8 +59,9 @@ INNER JOIN LicenseClasses LC ON LDLA.LicenseClassID = LC.LicenseClassID; ";
             }
             catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -102,8 +104,9 @@ WHERE Drivers.PersonID = @PersonID;";
             }
             catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally { connection.Close(); }
 
             return dt;

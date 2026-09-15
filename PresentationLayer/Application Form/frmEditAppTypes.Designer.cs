@@ -158,7 +158,7 @@
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
             // 
-            // frmEditManageAppTypes
+            // frmEditAppTypes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -175,8 +175,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "frmEditManageAppTypes";
-            Text = "frmEditManageAppTypes";
+            Name = "frmEditAppTypes";
+            Text = "Edit Application Types";
             Load += frmEditManageAppTypes_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

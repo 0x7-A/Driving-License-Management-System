@@ -1,13 +1,6 @@
 ﻿using Project19_businessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Project_19_DVDL__2nd_
 {
@@ -18,30 +11,39 @@ namespace Project_19_DVDL__2nd_
         public frmPeopleManagement()
         {
             InitializeComponent();
+         
+            dataGridView1.ContextMenuStrip = contextMenuStrip1;
         }
 
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
-            RefershData();
+            RefreshData();
         }
 
-        private void RefershData()
+       
+        protected override void RefreshData() // Changed to override and fixed spelling
         {
             _dtPeople = clsPerson.GetAllPeople();
             dataGridView1.DataSource = _dtPeople;
             _ComboBoxItems();
             lblrecord.Text = dataGridView1.Rows.Count.ToString();
 
+
+            dataGridView1.Columns[0].HeaderText = "Person ID";
+            dataGridView1.Columns[1].HeaderText = "National Number";
+            dataGridView1.Columns[2].HeaderText = "First Name";
+            dataGridView1.Columns[3].HeaderText = "Second Name";
+            dataGridView1.Columns[4].HeaderText = "Third Name";
+            dataGridView1.Columns[5].HeaderText = "Last Name";
+            dataGridView1.Columns[7].HeaderText = "Date Of Birth";
+
+
+
+
             if (comboBox1.SelectedIndex == 0)
-            {
                 textBox1.Visible = false;
-            }
             else
-            {
                 textBox1.Visible = true;
-            }
-
-
         }
 
         private void _ComboBoxItems()
@@ -86,12 +88,11 @@ namespace Project_19_DVDL__2nd_
 
             if (selectedColumn == "PersonID")
             {
-                // Use '=' for Int32 columns without quotes
+                
                 _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", selectedColumn, filterValue);
             }
             else
             {
-                // Use 'LIKE' for String columns with single quotes
                 _dtPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", selectedColumn, filterValue);
             }
 
@@ -108,7 +109,7 @@ namespace Project_19_DVDL__2nd_
                 if (clsPerson.DeleteByID(targetedID))
                 {
                     MessageBox.Show("Person with " + targetedID + " deleted.");
-                    RefershData();
+                    RefreshData();
                 }
                 else
                 {
@@ -137,7 +138,7 @@ namespace Project_19_DVDL__2nd_
         {
             Form frm = new frmAddEditPerson((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
-            refereshData();
+            RefreshData();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -157,7 +158,7 @@ namespace Project_19_DVDL__2nd_
         {
             Form frm = new frmPersonDetails((int)dataGridView1.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
-            refereshData();
+            RefreshData();
         }
     }
 }

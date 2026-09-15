@@ -334,7 +334,7 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
-            // frmNewLDLApp_ication
+            // frmNewLDLApplication
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -345,8 +345,8 @@
             Controls.Add(pictureBox8);
             Controls.Add(tabControl1);
             Controls.Add(btnClose);
-            Name = "frmNewLDLApp_ication";
-            Text = "frmNewLDLApplication";
+            Name = "frmNewLDLApplication";
+            Text = "New Local Application";
             Load += frmNewLDLApp_ication_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

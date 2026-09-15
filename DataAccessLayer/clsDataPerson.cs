@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Numerics;
@@ -34,9 +35,9 @@ namespace Project_DataAccessLayer
                 reader.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -63,9 +64,9 @@ namespace Project_DataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -121,9 +122,9 @@ namespace Project_DataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -165,9 +166,9 @@ namespace Project_DataAccessLayer
                 return cmd.ExecuteNonQuery() > 0;
 
             }
-            catch(Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
             finally
@@ -198,9 +199,9 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
             finally
@@ -210,7 +211,7 @@ namespace Project_DataAccessLayer
             return false;
         }
 
-        // Does PersonExists with PersonID ?
+  
 
         public static bool AddNewPerson(ref int PersonID, string NationalNumber, string FirstName, string SecondName, string ThirdName,
           string LastName, DateTime DateOfBirth, int Gender, string Address, string phone, string Email, int CountryID, string ImagePath)
@@ -248,9 +249,9 @@ namespace Project_DataAccessLayer
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
             finally
@@ -307,9 +308,9 @@ namespace Project_DataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -342,10 +343,11 @@ namespace Project_DataAccessLayer
                     PersonID = foundID;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+        
             finally
             {
                 connection.Close();

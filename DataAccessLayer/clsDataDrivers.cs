@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,11 @@ namespace Project_DataAccessLayer
                 }
                 reader.Close();
             }
-            catch(Exception ex) 
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -71,8 +73,11 @@ namespace Project_DataAccessLayer
                     return ID;
                 }
             }
-            catch (Exception ex) {
-                }
+            catch (Exception e)
+            {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+            }
+
             finally
             {
                 Connection.Close();
@@ -99,10 +104,11 @@ where PersonID=@PersonID; ";
                 return RowEffected > 0;
 
             }
-            catch(Exception Ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -133,10 +139,11 @@ where PersonID=@PersonID; ";
                     DriverID = ID;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();

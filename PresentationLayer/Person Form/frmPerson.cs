@@ -30,9 +30,9 @@ namespace Project_19_DVDL__2nd_
 
         protected void UpdateDateTime()
         {
-            DateTime currentDateTime = DateTime.Now;
-            dtDateOfBirth.MaxDate = currentDateTime.AddYears(-18);
-
+            dtDateOfBirth.MaxDate = DateTime.Now.AddYears(-18); 
+            dtDateOfBirth.MinDate = DateTime.Now.AddYears(-100);
+            dtDateOfBirth.Value = dtDateOfBirth.MaxDate;
         }
 
 

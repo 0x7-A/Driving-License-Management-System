@@ -182,7 +182,7 @@
             Controls.Add(pictureBox8);
             Controls.Add(label4);
             Name = "frmTakeTest";
-            Text = "frmTakeTest";
+            Text = "Take Test";
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

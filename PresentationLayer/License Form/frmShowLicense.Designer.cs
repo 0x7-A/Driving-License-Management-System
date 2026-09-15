@@ -69,7 +69,7 @@
             Controls.Add(btnClose);
             Controls.Add(ucLicenseInfo1);
             Name = "frmShowLicense";
-            Text = "frmShowLicense";
+            Text = "Show License";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }

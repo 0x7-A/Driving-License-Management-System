@@ -1,4 +1,5 @@
 using Project19_businessLayer;
+using Microsoft.Win32;
 using System.Net;
 
 namespace Project_19_DVDL__2nd_
@@ -12,7 +13,7 @@ namespace Project_19_DVDL__2nd_
         public frmLogin()
         {
             InitializeComponent();
-            ReadLoginFile();
+    
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -35,22 +36,25 @@ namespace Project_19_DVDL__2nd_
             else if(!_CurrnetUser.isActive)
             {
                 txtUsename.Focus();
+                
                 MessageBox.Show("Your account is not active, please contact your Admin");
                 return;
             }
 
 
+            string UserName = "";
+            string Password = "";
+
             if (chRemember.Checked)
             {
-                clsSystem.WriteLoginInfo(txtUsename.Text, txtPassword.Text);
+                clsSystem.WriteRigestry(txtUsename.Text, txtPassword.Text);
             }
             else
             {
-                clsSystem.ClearLoginFile();
-
+                clsSystem.ClearRigesrty();
             }
 
-                 clsSystem.CurrentUser = _CurrnetUser;
+            clsSystem.CurrentUser = _CurrnetUser;
                 frm = new frmMain(this);
                 this.Hide();
                 frm.ShowDialog();
@@ -60,9 +64,13 @@ namespace Project_19_DVDL__2nd_
 
         private void ReadLoginFile()
         {
-            string username = "", password = "";
+            string username = "";
+            string password = "";
 
-            if (clsSystem.ReadLoginFile(ref username,ref password))
+
+
+
+            if (clsSystem.ReadRigestry(ref username,ref password))
             {
               txtUsename.Text = username;
               txtPassword.Text = password;
@@ -71,7 +79,7 @@ namespace Project_19_DVDL__2nd_
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            ReadLoginFile();
         }
     }
 }

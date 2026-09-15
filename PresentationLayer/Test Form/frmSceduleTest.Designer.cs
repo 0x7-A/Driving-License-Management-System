@@ -36,7 +36,7 @@
             ucScheduledTest1.AutoSize = true;
             ucScheduledTest1.Location = new Point(164, 12);
             ucScheduledTest1.Name = "ucScheduledTest1";
-            ucScheduledTest1.Size = new Size(695, 888);
+            ucScheduledTest1.Size = new Size(695, 904);
             ucScheduledTest1.TabIndex = 0;
             // 
             // frmSceduleTest
@@ -46,7 +46,7 @@
             ClientSize = new Size(983, 910);
             Controls.Add(ucScheduledTest1);
             Name = "frmSceduleTest";
-            Text = "frmSceduleTest";
+            Text = "Scedule Test";
             Load += frmSceduleTest_Load;
             ResumeLayout(false);
             PerformLayout();

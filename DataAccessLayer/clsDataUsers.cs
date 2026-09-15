@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Data.Sql;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using Microsoft.Data.Sql;
-using Microsoft.Data.SqlClient;
 
 
 namespace Project_DataAccessLayer
@@ -16,7 +17,7 @@ namespace Project_DataAccessLayer
             ref int personID, ref int UserID, ref bool isActive)
         {
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "select * from Users where Username=@username and Password=@password;";
+            string query = "select * from Users where Username=@username and PasswordHash=@password;";
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -43,7 +44,7 @@ namespace Project_DataAccessLayer
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -76,7 +77,7 @@ namespace Project_DataAccessLayer
             }
             catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -88,14 +89,11 @@ namespace Project_DataAccessLayer
 
         public static bool FindByUserID(int UserID, ref int personID, ref string username, ref string password, ref bool isActive)
         {
-
             SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "select * from Users where UserID=@UserID;";
+            string query = "SELECT UserID, PersonID, UserName, PasswordHash, IsActive FROM Users WHERE UserID = @UserID;";
 
             SqlCommand cmd = new SqlCommand(query, connection);
-
             cmd.Parameters.AddWithValue("@UserID", UserID);
-
 
             bool isfound = false;
             try
@@ -104,21 +102,20 @@ namespace Project_DataAccessLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    isfound = true;
                     personID = (int)reader["PersonID"];
                     isActive = (bool)reader["IsActive"];
-                    password = (string)reader["Password"];
-                    username = (string)reader["UserName"];
 
+                    password = reader["PasswordHash"] != DBNull.Value ? reader["PasswordHash"].ToString() : "";
+                    username = reader["UserName"] != DBNull.Value ? reader["UserName"].ToString() : "";
 
-
-
-                    reader.Close();
+                    isfound = true; 
                 }
+                reader.Close();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+            
             }
             finally
             {
@@ -128,35 +125,51 @@ namespace Project_DataAccessLayer
         }
 
 
-        public static bool Update(int UserID, int PersonID, string username, string NewPassword, bool IsActive)
+        public static bool Update(int UserID, int PersonID, string username, string password, bool IsActive)
         {
-            SqlConnection connection = new SqlConnection(clsSettings.ConnectionString);
-            string query = "update Users set   UserName=@UserName , Password=@Password , IsActive=@IsActive where UserID=@UserID;";
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-
-            cmd.Parameters.AddWithValue("@UserID", UserID);
-            cmd.Parameters.AddWithValue("@Password", NewPassword);
-            cmd.Parameters.AddWithValue("@UserName", username);
-            cmd.Parameters.AddWithValue("IsActive", IsActive);
-
-            try
+            int rowsAffected = 0;
+            using (SqlConnection connection = new SqlConnection(clsSettings.ConnectionString))
             {
-                connection.Open();
-                return cmd.ExecuteNonQuery() > 0;
+                string query = "";
 
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
-            finally
-            {
-                connection.Close();
-            }
+                
+                if (string.IsNullOrEmpty(password))
+                {
+                    query = @"UPDATE Users 
+                      SET PersonID = @PersonID, UserName = @UserName, IsActive = @IsActive 
+                      WHERE UserID = @UserID";
+                }
+                else
+                {
+                    
+                    query = @"UPDATE Users 
+                      SET PersonID = @PersonID, UserName = @UserName, 
+                          PasswordHash = @PasswordHash, IsActive = @IsActive 
+                      WHERE UserID = @UserID";
+                }
 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserID", UserID);
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+                    command.Parameters.AddWithValue("@UserName", username);
+                    command.Parameters.AddWithValue("@IsActive", IsActive);
 
+                   
+                    if (!string.IsNullOrEmpty(password))
+                    {
+                        command.Parameters.AddWithValue("@PasswordHash", password);
+                    }
+
+                    try
+                    {
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch(Exception e) { EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error); }
+                }
+            }
+            return (rowsAffected > 0);
         }
 
         public static bool DeleteUserByID(int UserID)
@@ -176,14 +189,14 @@ namespace Project_DataAccessLayer
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
             finally
             {
                 connection.Close();
             }
-
+            
         }
 
         public static bool DoesUserExistsWithPersonID(int PersonID)
@@ -203,10 +216,9 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception E)
+            catch (Exception e)
             {
-                Console.WriteLine(E.Message);
-                return false;
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -233,10 +245,9 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception E)
+            catch (Exception e)
             {
-                Console.WriteLine(E.Message);
-                return false;
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -267,10 +278,9 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception E)
+            catch (Exception e)
             {
-                Console.WriteLine(E.Message);
-                return false;
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
             finally
             {

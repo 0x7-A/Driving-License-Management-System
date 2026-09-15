@@ -233,7 +233,7 @@
             Controls.Add(gbFilter);
             Controls.Add(label1);
             Name = "frmReplacmentForDemagedLostLicense";
-            Text = "frmReplacmentForDemagedLostLicense";
+            Text = "Replacment For Demaged Lost License";
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbFibdLicenseID).EndInit();

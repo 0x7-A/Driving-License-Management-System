@@ -192,7 +192,7 @@
             Controls.Add(gbFilter);
             Controls.Add(label1);
             Name = "frmRenewLicensecs";
-            Text = "frmRenewLicensecs";
+            Text = "Renew Licensecs";
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbFibdLicenseID).EndInit();

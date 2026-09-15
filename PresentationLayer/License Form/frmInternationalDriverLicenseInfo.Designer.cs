@@ -108,7 +108,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "frmInternationalDriverLicenseInfo";
-            Text = "frmInternationalDriverLicenseInfo";
+            Text = "International Driver License Info";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

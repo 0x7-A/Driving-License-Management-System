@@ -97,7 +97,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "frmLicenseInfo";
-            Text = "frmLicenseInfo";
+            Text = "License Info";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);

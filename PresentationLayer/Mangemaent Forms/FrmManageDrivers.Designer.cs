@@ -35,6 +35,7 @@
             issueInternationalLicenseToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
             showPersonLicenseHistoryToolStripMenuItem = new ToolStripMenuItem();
+            txtFiliter = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbTitle).BeginInit();
             contextMenuStrip1.SuspendLayout();
@@ -70,11 +71,12 @@
             showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
             showPersonInfoToolStripMenuItem.Size = new Size(268, 26);
             showPersonInfoToolStripMenuItem.Text = "Show Person Info";
+            showPersonInfoToolStripMenuItem.Click += showPersonInfoToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(247, 6);
+            toolStripMenuItem1.Size = new Size(265, 6);
             // 
             // issueInternationalLicenseToolStripMenuItem
             // 
@@ -86,7 +88,7 @@
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(247, 6);
+            toolStripMenuItem2.Size = new Size(265, 6);
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
@@ -95,13 +97,21 @@
             showPersonLicenseHistoryToolStripMenuItem.Size = new Size(268, 26);
             showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             // 
+            // txtFiliter
+            // 
+            txtFiliter.Location = new Point(325, 257);
+            txtFiliter.Name = "txtFiliter";
+            txtFiliter.Size = new Size(183, 27);
+            txtFiliter.TabIndex = 20;
+            // 
             // FrmManageDrivers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1272, 714);
+            Controls.Add(txtFiliter);
             Name = "FrmManageDrivers";
-            Text = "FrmManageDrivers";
+            Text = "Manage Drivers";
             Load += FrmManageDrivers_Load;
             Controls.SetChildIndex(pbTitle, 0);
             Controls.SetChildIndex(lblTitle, 0);
@@ -112,6 +122,7 @@
             Controls.SetChildIndex(pictureBox1, 0);
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(lblrecord, 0);
+            Controls.SetChildIndex(txtFiliter, 0);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbTitle).EndInit();
             contextMenuStrip1.ResumeLayout(false);
@@ -127,5 +138,6 @@
         private ToolStripMenuItem issueInternationalLicenseToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private TextBox txtFiliter;
     }
 }

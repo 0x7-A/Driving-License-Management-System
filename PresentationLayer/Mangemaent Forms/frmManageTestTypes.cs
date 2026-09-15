@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Project_19_DVDL__2nd_
 {
-    public partial class frmTestTypes : Form
+    public partial class frmManageTestTypes : Form
     {
         clsTestTypes _CurrnetType;
 
         Form frm;
-        public frmTestTypes()
+        public frmManageTestTypes()
         {
             InitializeComponent();
         }
@@ -40,7 +40,21 @@ namespace Project_19_DVDL__2nd_
         {
 
             dataGridView1.DataSource = clsTestTypes.GetAllTestTypes();
-            lblTotalRecord.Text = (dataGridView1.RowCount - 1).ToString();
+            lblTotalRecord.Text = dataGridView1.RowCount.ToString();
+
+            dataGridView1.Columns[0].HeaderText = "Test Type ID";
+            dataGridView1.Columns[0].Width = 80;
+
+          
+
+            dataGridView1.Columns[3].HeaderText = "Fee";
+            dataGridView1.Columns[3].Width = 110;
+
+            dataGridView1.Columns[1].HeaderText = "Test Title";
+            dataGridView1.Columns[1].Width = 160;
+
+            dataGridView1.Columns[2].HeaderText = "Description";
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)

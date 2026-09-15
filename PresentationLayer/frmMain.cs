@@ -1,13 +1,4 @@
 ﻿using Project19_businessLayer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project_19_DVDL__2nd_
 {
@@ -37,7 +28,7 @@ namespace Project_19_DVDL__2nd_
 
         private void mangeTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = new frmTestTypes();
+            Form frm = new frmManageTestTypes();
             frm.ShowDialog();
         }
 
@@ -137,7 +128,12 @@ namespace Project_19_DVDL__2nd_
         private void manaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageDetainedLicense frm = new frmManageDetainedLicense();
-            frm.ShowDialog();   
+            frm.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+          //  Project19_BussnessLayer.clsSecurityUtility.MigrateAllPasswordsToHash();
         }
     }
 }

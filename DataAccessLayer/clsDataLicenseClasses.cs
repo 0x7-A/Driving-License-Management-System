@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,21 +28,17 @@ namespace Project_DataAccessLayer
 
                 dt.Load(reader);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return null;
             }
+
             finally
             {
                 connection.Close();
             }
                 
-
-
-
-
-        
             return dt;
 
         }
@@ -66,10 +63,12 @@ namespace Project_DataAccessLayer
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return false;
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+              
             }
+
             finally
             {
                 connection.Close();
@@ -99,10 +98,11 @@ namespace Project_DataAccessLayer
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return false;
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -139,9 +139,13 @@ namespace Project_DataAccessLayer
                 }
                 reader.Close();
             }
-            catch (Exception Ex) { 
-                isFound = false; 
+            catch (Exception e)
+            {
+
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+                isFound = false;
             }
+
             finally
             {
                 connection.Close() ;

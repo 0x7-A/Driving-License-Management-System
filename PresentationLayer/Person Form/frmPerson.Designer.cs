@@ -91,14 +91,14 @@
             // 
             // lblTitle
             // 
-            lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Yu Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(192, 64, 0);
-            lblTitle.Location = new Point(496, 63);
+            lblTitle.Location = new Point(376, 63);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(94, 44);
+            lblTitle.Size = new Size(268, 44);
             lblTitle.TabIndex = 45;
             lblTitle.Text = "Title";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -498,6 +498,8 @@
             // 
             // dtDateOfBirth
             // 
+            dtDateOfBirth.CustomFormat = "dd/MM/yyyy";
+            dtDateOfBirth.Format = DateTimePickerFormat.Custom;
             dtDateOfBirth.Location = new Point(530, 83);
             dtDateOfBirth.Name = "dtDateOfBirth";
             dtDateOfBirth.Size = new Size(150, 27);
@@ -565,8 +567,9 @@
             Controls.Add(pictureBox11);
             Controls.Add(label2);
             Controls.Add(lblTitle);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmPerson";
-            Text = "frmShow";
+            Text = "Show Person";
             Load += frmShow_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPersonImage).EndInit();

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +34,11 @@ namespace Project_DataAccessLayer
                 reader.Close();
 
             }
-            catch (Exception Ex)
+            catch (Exception e)
             {
-                Console.WriteLine(Ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
             }
+
             finally
             {
                 connection.Close();
@@ -64,11 +66,12 @@ namespace Project_DataAccessLayer
                     return -1;
 
             }
-            catch (Exception Ex)
+            catch (Exception e)
             {
-                Console.WriteLine(Ex.Message);
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return -1;
             }
+
             finally
             {
                 connection.Close();

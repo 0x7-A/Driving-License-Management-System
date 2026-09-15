@@ -2,6 +2,7 @@
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,11 +38,17 @@ namespace Project_DataAccessLayer
                 }
 
             }
-            catch (Exception ex)
+
+            catch (Exception e)
             {
-                
-                   return false;
+
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+
+
+
+                return false;
             }
+
             finally
             {
                 connection.Close();
@@ -76,10 +83,12 @@ namespace Project_DataAccessLayer
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 connection.Close();
@@ -115,11 +124,12 @@ namespace Project_DataAccessLayer
                 
 
             }
-            catch
-            (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 connection.Close();
@@ -147,10 +157,12 @@ namespace Project_DataAccessLayer
 
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
                 return false;
             }
+
             finally
             {
                 connection.Close();
@@ -208,7 +220,12 @@ WHERE LDLA.LocalDrivingLicenseApplicationID = @LDLAID;";
                 }
                 reader.Close();
             }
-            catch (Exception) { isFound = false; }
+            catch (Exception e)
+            {
+                EventLog.WriteEntry(clsSettings.SourceName, e.ToString(), EventLogEntryType.Error);
+                isFound = false;
+            }
+
             finally { connection.Close(); }
 
             return isFound;

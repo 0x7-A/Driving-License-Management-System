@@ -27,9 +27,9 @@ namespace Project_19_DVDL__2nd_
 
         }
 
-        protected void refereshData()
+        protected virtual void RefreshData()
         {
-
+            
         }
 
         private void lblrecord_Click(object sender, EventArgs e)
@@ -45,6 +45,10 @@ namespace Project_19_DVDL__2nd_
         protected void cmsBaseManagement_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

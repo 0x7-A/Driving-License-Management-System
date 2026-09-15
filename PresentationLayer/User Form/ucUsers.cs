@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
-
+using Project19_businessLayer;
+using Project19_BussnessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project19_businessLayer;
 
 
 
@@ -37,10 +37,17 @@ namespace Project_19_DVDL__2nd_
 
         }
 
-        public bool VerifyCurrentPassword(string enteredPassword)
+
+        public bool VerifyCurrentPassword(string plaintextPassword)
         {
-            return enteredPassword == User.password;
+            if (User == null || string.IsNullOrEmpty(User.userName))
+                return false;
+
+            // الدالة هنا ستتولى التشفير والمطابقة عبر الـ Login تلقائياً
+            return (clsUsers.Login(User.userName, plaintextPassword) != null);
         }
+
+
 
         public void LoadUser(int UserID)
         {
